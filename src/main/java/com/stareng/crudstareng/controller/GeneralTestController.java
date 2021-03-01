@@ -8,7 +8,7 @@ public class GeneralTestController {
 	
 	@GetMapping(value = "/test")
 	public String test(){
-		return "Meu nome é Thiago. Esta é uma mensagem de teste!";	
+		return "Meu nome é Thiago. Esta é uma mensagem de teste!!!";	
 	}
 
 }

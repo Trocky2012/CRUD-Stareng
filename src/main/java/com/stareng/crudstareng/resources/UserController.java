@@ -1,4 +1,4 @@
-package com.stareng.crudstareng.resourses;
+package com.stareng.crudstareng.resources;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ public class UserController {
 	
 	@GetMapping
 	public ResponseEntity<User> findAll(){
-		User us = new User(1L, "Thiago", "thiago@email.com", "982165189", "1234");
+		User us = new User(1L, "Thiago Trolle", "thiago@email.com", "982165189", "12345678");
 		return ResponseEntity.ok().body(us);	
 	}
 	
