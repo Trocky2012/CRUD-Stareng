@@ -1,0 +1,5 @@
+package com.stareng.crudstareng.resources.exceptions;
+
+public class ResourceExceptionHandler {
+
+}
