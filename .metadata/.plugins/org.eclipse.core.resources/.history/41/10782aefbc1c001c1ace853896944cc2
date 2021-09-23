@@ -1,0 +1,63 @@
+package com.stareng.crudstareng.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.persistence.EntityNotFoundException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
+
+import com.stareng.crudstareng.entities.Post;
+import com.stareng.crudstareng.repositories.PostRepository;
+import com.stareng.crudstareng.services.exceptions.DatabaseException;
+import com.stareng.crudstareng.services.exceptions.ResourceNotFoundException;
+
+@Service
+public class PostService {
+
+	@Autowired
+	private PostRepository repository;
+
+	public List<Post> findAll() {
+		return repository.findAll();
+	}
+	
+	public Post findById(Long id) {
+		Optional<Post> obj = repository.findById(id);
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id) );
+	}
+	
+	public Post insert(Post post) {
+		return repository.save(post);
+	}
+	
+	public void delete(Long id) {
+		try {
+			repository.deleteById(id);			
+		}catch(EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException(id);
+		}catch(DataIntegrityViolationException e) {
+			throw new DatabaseException(e.getMessage());
+		}
+	}
+	
+	public Post update(Long id, Post post) {
+		try {
+			Post entity = repository.getOne(id);
+			updateData(entity, post);
+			return repository.save(entity);			
+		}catch(EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
+	}
+
+	private void updateData(Post entity, Post post) {
+		entity.setTitle(post.getTitle());
+		entity.setComment(post.getComment());
+		entity.setTimestamp(post.getTimestamp());	
+	}
+
+}
