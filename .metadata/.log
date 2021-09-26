@@ -523,3 +523,57 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 14:29:30.574
 !MESSAGE executing callback sts4.classpath.uVRjcvHu SUCCESS [done]
+
+!ENTRY org.eclipse.jface 2 0 2021-09-26 15:33:00.038
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-09-26 15:33:00.038
+!MESSAGE A conflict occurred for CTRL+SHIFT+C:
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.eclipse.tm4e.languageconfiguration.togglelinecommentcommand,Toggle Line Comment,
+		,
+		Category(org.eclipse.tm4e.languageconfiguration.category,TM4E Language Configuration,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@406a46b7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+SHIFT+C,
+	ParameterizedCommand(Command(org.springframework.tooling.boot.ls.ToggleComment,Toggle Comment,
+		,
+		Category(org.springframework.ide.eclipse.commands,Spring Generic Text Editor,Spring Language Server Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@29346a21,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:45.070
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:45.080
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:45.088
+!MESSAGE buffering callback sts4.classpath.uVRjcvHu CRUD-Stareng false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:45.089
+!MESSAGE executing callback sts4.classpath.uVRjcvHu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:45.117
+!MESSAGE executing callback sts4.classpath.uVRjcvHu SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:50.749
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:50.759
+!MESSAGE classpath=94 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:50.765
+!MESSAGE buffering callback sts4.classpath.uVRjcvHu CRUD-Stareng false 94
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:50.766
+!MESSAGE executing callback sts4.classpath.uVRjcvHu 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-26 15:33:50.781
+!MESSAGE executing callback sts4.classpath.uVRjcvHu SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-09-26 16:02:23.033
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
