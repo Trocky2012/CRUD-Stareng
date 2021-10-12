@@ -1,5 +1,0 @@
-package com.stareng.crudstareng.services.exceptions;
-
-public class ResourceNotFoundException {
-
-}

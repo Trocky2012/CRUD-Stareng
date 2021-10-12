@@ -1,0 +1,5 @@
+package com.stareng.crudstareng.entitiesDTO;
+
+public class PostDTO {
+
+}

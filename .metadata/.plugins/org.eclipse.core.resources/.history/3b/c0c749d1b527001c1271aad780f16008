@@ -1,0 +1,45 @@
+package com.stareng.crudstareng.config;
+
+import java.time.Instant;
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import com.stareng.crudstareng.entities.Post;
+import com.stareng.crudstareng.entities.User;
+import com.stareng.crudstareng.entities.UserDTO;
+import com.stareng.crudstareng.entities.enums.PostType;
+import com.stareng.crudstareng.repositories.PostRepository;
+import com.stareng.crudstareng.repositories.UserRepository;
+
+@Configuration
+@Profile("test")
+//"test" deve ter mesma notação utilizada em package: src/main/resources -> application.properties
+public class TestConfig implements CommandLineRunner{
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private PostRepository postRepository;
+	
+	@Override
+	public void run(String... args) throws Exception{
+		
+		User u1 = new User(null, "Thiago Cavalheiro", "thiago@email.com", "(51)988888888", "123456");
+		User u2 = new User(null, "Aline Machado", "aline@email.com", "(51)977777777", "123456"); 
+		
+		userRepository.saveAll(Arrays.asList(u1,u2));
+		
+		Post p1 = new Post (null, Instant.parse("2021-09-26T14:40:00Z"), PostType.DEFAULT, "My First Post", "Default - Enviropment test", "https:\"null\".com", new UserDTO(u1));
+		Post p2 = new Post (null, Instant.parse("2021-09-26T15:00:00Z"), PostType.HAPPY, "My happy post", "Happy - It's just a test", "https:/null.com", new UserDTO(u2));
+		Post p3 = new Post (null, Instant.parse("2021-09-26T15:30:00Z"), PostType.ANGRY, "My angry post", "Angry - New test", "https:-null.com", new UserDTO(u1));
+		Post p4 = new Post (null, Instant.parse("2021-09-26T16:00:00Z"), PostType.SAD, "My sad post", "Sad - Another test", "https:null.com", new UserDTO(u1));
+
+		postRepository.saveAll(Arrays.asList(p1,p2,p3,p4));
+	}
+	
+}

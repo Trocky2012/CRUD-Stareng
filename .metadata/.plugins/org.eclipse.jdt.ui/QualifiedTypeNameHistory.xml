@@ -10,7 +10,9 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="com.stareng.crudstareng.entities.Post"/>
     <fullyQualifiedTypeName name="com.stareng.crudstareng.entities.enums.PostType"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collector"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="com.stareng.crudstareng.entities.Post"/>
 </qualifiedTypeNameHistroy>
